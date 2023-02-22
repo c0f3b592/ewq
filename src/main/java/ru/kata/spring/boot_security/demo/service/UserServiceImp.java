@@ -41,9 +41,7 @@ public class UserServiceImp implements UserService {
     @Override
     @Transactional(readOnly = true)
     public List<User> getUserList() {
-        List<User> list = new ArrayList<>();
-        repository.findAll().forEach(list::add);
-        return list;
+        return repository.findAll();
     }
 
     @Override
